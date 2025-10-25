@@ -22,7 +22,7 @@
 import { BayesianOptimizer } from "./BayesianOptimizer_v2.js";
 
 // 使用示例
-const bestResult = await BayesianOptimizer({
+const result = await BayesianOptimizer({
 
 	// 目标函数
 	// 你可以在这里添加各种东西, 比如运行一些其他软件, 并对结果进行评估
