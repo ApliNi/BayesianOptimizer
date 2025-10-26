@@ -1,7 +1,7 @@
-import { BayesianOptimizer as BayesianOptimizer_v1 } from "./BayesianOptimizer/BayesianOptimizer_v1.js";
-import { BayesianOptimizer as BayesianOptimizer_v2 } from "./BayesianOptimizer/BayesianOptimizer_v2.js";
-import { BayesianOptimizer as BayesianOptimizer_v3 } from "./BayesianOptimizer/BayesianOptimizer_v3.js";
-import { BayesianOptimizer as BayesianOptimizer_v4 } from "./BayesianOptimizer/BayesianOptimizer_v4.js";
+import { BayesianOptimizer as BayesianOptimizer_v1 } from "./BayesianOptimizer_v1.js";
+import { BayesianOptimizer as BayesianOptimizer_v2 } from "./BayesianOptimizer_v2.js";
+import { BayesianOptimizer as BayesianOptimizer_v3 } from "./BayesianOptimizer_v3.js";
+import { BayesianOptimizer as BayesianOptimizer_v4 } from "./BayesianOptimizer_v4.js";
 import { GeneticOptimizer as GeneticOptimizer_v1 } from "./GeneticOptimizer_v1.js";
 
 // 测试配置
