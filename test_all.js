@@ -1,6 +1,7 @@
 import { BayesianOptimizer as BayesianOptimizer_v1 } from "./BayesianOptimizer_v1.js";
 import { BayesianOptimizer as BayesianOptimizer_v2 } from "./BayesianOptimizer_v2.js";
 import { BayesianOptimizer as BayesianOptimizer_v3 } from "./BayesianOptimizer_v3.js";
+import { BayesianOptimizer as BayesianOptimizer_v4 } from "./BayesianOptimizer_v4.js";
 
 // 测试配置
 const testConfig = {
@@ -10,9 +11,9 @@ const testConfig = {
         z: [0, 10],
         a: [-50, 50],
     },
-    iterations: 50,
+    iterations: 100, // 70
     seed: 123,
-    debug: false
+    debug: false,
 };
 
 // 目标函数 - 寻找最优参数 [-5, 10, 5, 25]
@@ -47,7 +48,7 @@ const testVersion = async (version, optimizer, config) => {
             bestParams: result.bestParams,
             bestLoss: result.bestLoss,
             executionTime,
-            success: true
+            success: true,
         };
     } catch (error) {
         console.error(`版本 ${version} 测试失败:`, error.message);
@@ -56,7 +57,7 @@ const testVersion = async (version, optimizer, config) => {
             bestLoss: Infinity,
             executionTime: 0,
             success: false,
-            error: error.message
+            error: error.message,
         };
     }
 }
@@ -66,14 +67,11 @@ const testBayesianOptimizerBest = async () => {
     
     const results = [];
     
-    // 测试版本1
+	// 测试不同版本
     results.push(await testVersion('v1', BayesianOptimizer_v1, testConfig));
-    
-    // 测试版本2
     results.push(await testVersion('v2', BayesianOptimizer_v2, testConfig));
-    
-    // 测试版本3
     results.push(await testVersion('v3', BayesianOptimizer_v3, testConfig));
+    results.push(await testVersion('v4', BayesianOptimizer_v4, testConfig));
     
     // 分析结果
     console.log('\n=== 测试结果汇总 ===');
