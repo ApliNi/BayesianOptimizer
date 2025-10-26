@@ -1,7 +1,7 @@
-import { BayesianOptimizer } from "./BayesianOptimizer_v2.js";
+import { GeneticOptimizer } from "./GeneticOptimizer_v1.js";
 
 // 使用示例
-const bestResult = await BayesianOptimizer({
+const bestResult = await GeneticOptimizer({
 
 	// 目标函数
 	// 你可以在这里添加各种东西, 比如运行一些其他软件, 并对结果进行评估

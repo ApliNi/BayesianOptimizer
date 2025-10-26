@@ -1,7 +1,8 @@
-import { BayesianOptimizer as BayesianOptimizer_v1 } from "./BayesianOptimizer_v1.js";
-import { BayesianOptimizer as BayesianOptimizer_v2 } from "./BayesianOptimizer_v2.js";
-import { BayesianOptimizer as BayesianOptimizer_v3 } from "./BayesianOptimizer_v3.js";
-import { BayesianOptimizer as BayesianOptimizer_v4 } from "./BayesianOptimizer_v4.js";
+import { BayesianOptimizer as BayesianOptimizer_v1 } from "./BayesianOptimizer/BayesianOptimizer_v1.js";
+import { BayesianOptimizer as BayesianOptimizer_v2 } from "./BayesianOptimizer/BayesianOptimizer_v2.js";
+import { BayesianOptimizer as BayesianOptimizer_v3 } from "./BayesianOptimizer/BayesianOptimizer_v3.js";
+import { BayesianOptimizer as BayesianOptimizer_v4 } from "./BayesianOptimizer/BayesianOptimizer_v4.js";
+import { GeneticOptimizer as GeneticOptimizer_v1 } from "./GeneticOptimizer_v1.js";
 
 // 测试配置
 const testConfig = {
@@ -11,7 +12,7 @@ const testConfig = {
         z: [0, 10],
         a: [-50, 50],
     },
-    iterations: 100, // 70
+    iterations: 50,
     seed: 123,
     debug: false,
 };
@@ -68,10 +69,11 @@ const testBayesianOptimizerBest = async () => {
     const results = [];
     
 	// 测试不同版本
-    results.push(await testVersion('v1', BayesianOptimizer_v1, testConfig));
-    results.push(await testVersion('v2', BayesianOptimizer_v2, testConfig));
-    results.push(await testVersion('v3', BayesianOptimizer_v3, testConfig));
-    results.push(await testVersion('v4', BayesianOptimizer_v4, testConfig));
+    // results.push(await testVersion('v1', BayesianOptimizer_v1, testConfig));
+    // results.push(await testVersion('v2', BayesianOptimizer_v2, testConfig));
+    // results.push(await testVersion('v3', BayesianOptimizer_v3, testConfig));
+    results.push(await testVersion('v4b', BayesianOptimizer_v4, testConfig));
+	results.push(await testVersion('v1g', GeneticOptimizer_v1, testConfig));
     
     // 分析结果
     console.log('\n=== 测试结果汇总 ===');
